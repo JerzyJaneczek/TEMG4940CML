@@ -1,5 +1,4 @@
 dash== 2.11.1
-os
 dash_bootstrap_components
 numpy
 plotly.graph_objs
