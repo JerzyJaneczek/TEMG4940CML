@@ -7,6 +7,7 @@ import numpy as np
 from dash.dependencies import Output, Input
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.SOLAR])
+server = app.server
 df = px.data.medals_long()
 
 # Data Processing
