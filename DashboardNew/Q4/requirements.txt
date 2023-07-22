@@ -1,4 +1,4 @@
-dash==23.2
+dash==20.1.1
 os
 dash_bootstrap_components
 numpy
