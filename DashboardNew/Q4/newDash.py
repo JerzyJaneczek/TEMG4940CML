@@ -9,6 +9,7 @@ import pandas as pd
 import plotly.express as px
 
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
+server = app.server
 
 image_path1 = 'figure1.png'
 image_path2 = 'figure2.png'
