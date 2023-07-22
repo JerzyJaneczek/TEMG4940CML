@@ -1,4 +1,4 @@
-dash==2.5.1
+dash==2.11.1
 matplotlib.pyplot
 dash
 dash_bootstrap_components
