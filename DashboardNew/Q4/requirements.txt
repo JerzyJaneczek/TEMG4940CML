@@ -1,0 +1,9 @@
+dash==20.1.1
+os
+dash
+dash_bootstrap_components
+numpy
+plotly.graph_objs
+dash
+pandas
+plotly.express
