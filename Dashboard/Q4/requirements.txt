@@ -1,7 +1,0 @@
-matplotlib.pyplot
-dash
-dash_bootstrap_components
-plotly.express
-pandas
-numpy
-dash.dependencies
