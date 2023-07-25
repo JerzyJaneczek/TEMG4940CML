@@ -1,6 +1,0 @@
-dash== 2.11.1
-dash_bootstrap_components
-numpy
-pandas
-plotly.express
-gunicorn
