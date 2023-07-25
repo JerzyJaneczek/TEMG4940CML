@@ -1,7 +1,6 @@
 dash==2.11.1
 dash_bootstrap_components
 numpy
-plotly.graph_objs
 pandas
 plotly.express
 gunicorn
