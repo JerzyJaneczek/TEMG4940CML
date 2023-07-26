@@ -11,6 +11,8 @@ import plotly.express as px
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 server = app.server
 
+image1 =  html.Img(src='', alt='image')
+image1 = './assets/figure1.png'
 image_path1 = './assets/figure1.png'
 image_path2 = './assets/figure2.png'
 image_path3 = './assets/figure3.png'
@@ -42,8 +44,7 @@ columnDropdown = dcc.Dropdown(options=[
 
 images = html.Div(
     [
-        html.Img(
-            src=image_path1, alt='image'),
+       image1,
         html.Img(
             src=image_path2, alt='image'),
         html.Img(
