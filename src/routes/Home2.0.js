@@ -23,7 +23,7 @@ const Home = () => {
   };
 
   const fetchTodos = async () => {
-    const res = await fetch("http://localhost:3000/todos");
+    const res = await fetch("https://server-j5o1.onrender.com/todos");
     const data = await res.json();
 
     return data;
@@ -59,7 +59,7 @@ const Home = () => {
         archive: false,
       };
 
-      const res = await fetch(`http://localhost:3000/todos/${draggedTodo.id}`, {
+      const res = await fetch(`https://server-j5o1.onrender.com/todos/${draggedTodo.id}`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json",
@@ -74,7 +74,7 @@ const Home = () => {
         archive: false,
       };
 
-      const res = await fetch(`http://localhost:3000/todos/${draggedTodo.id}`, {
+      const res = await fetch(`https://server-j5o1.onrender.com/todos/${draggedTodo.id}`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json",
@@ -86,7 +86,7 @@ const Home = () => {
       const taskToToggle = await fetchTodo(draggedTodo.id);
       const updTask = { ...taskToToggle, archive: true };
 
-      const res = await fetch(`http://localhost:3000/todos/${draggedTodo.id}`, {
+      const res = await fetch(`https://server-j5o1.onrender.com/todos/${draggedTodo.id}`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json",
@@ -125,7 +125,7 @@ const Home = () => {
 
   //--------- Fetch Todo from JSON Server ---------//
   const fetchTodo = async (id) => {
-    const res = await fetch(`http://localhost:3000/todos/${id}`);
+    const res = await fetch(`https://server-j5o1.onrender.com/todos/${id}`);
     const data = await res.json();
 
     return data;
@@ -144,7 +144,7 @@ const Home = () => {
   ) => {
     id = uuidv4();
     const task = { id, taskName, taskDescription, inProgress, archive };
-    const res = await fetch("http://localhost:3000/todos", {
+    const res = await fetch("https://server-j5o1.onrender.com/todos", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -162,7 +162,7 @@ const Home = () => {
   const deleteTodo = async (id) => {
     const task = await fetchTodo(id);
     task.archive = true;
-    const res = await fetch(`http://localhost:3000/todos/${id}`, {
+    const res = await fetch(`https://server-j5o1.onrender.com/todos/${id}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",
@@ -177,7 +177,7 @@ const Home = () => {
     const taskToToggle = await fetchTodo(task.id);
     task.inProgress = taskToToggle.inProgress;
 
-    const res = await fetch(`http://localhost:3000/todos/${task.id}`, {
+    const res = await fetch(`https://server-j5o1.onrender.com/todos/${task.id}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",
@@ -209,7 +209,7 @@ const Home = () => {
     const taskToToggle = await fetchTodo(id);
     const updTask = { ...taskToToggle, inProgress: !taskToToggle.inProgress };
 
-    const res = await fetch(`http://localhost:3000/todos/${id}`, {
+    const res = await fetch(`https://server-j5o1.onrender.com/todos/${id}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",
