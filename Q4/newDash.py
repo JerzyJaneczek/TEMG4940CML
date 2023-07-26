@@ -90,14 +90,14 @@ app.layout = dbc.Container(
 
 @ app.callback(
     Output("tab-content", "children"),
-    [Input("tabs", "active_tab"), Input("store", "data"), Input("image1", "image-1")],
+    [Input("tabs", "active_tab"), Input("store", "data")],
 )
-def render_tab_content(active_tab, data, image1):
+def render_tab_content(active_tab, data):
     if active_tab and data is not None:
         if active_tab == "q1":
             return [dropdown, columnDropdown, myGraph]
         elif active_tab == "q4":
-            return [image1]
+            return [images]
         elif active_tab == "q6":
             return [images2]
 
