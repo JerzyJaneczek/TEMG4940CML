@@ -11,12 +11,13 @@ import plotly.express as px
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 server = app.server
 
-image1 =  html.Img(src='', alt='image')
-image1 = './assets/figure1.png'
-image_path1 = './assets/figure1.png'
-image_path2 = './assets/figure2.png'
-image_path3 = './assets/figure3.png'
-image_path4 = './assets/figure4.png'
+image1 = html.Img(src='', id='image1')
+image2 = html.Img(src='', id='image2')
+image3 = html.Img(src='', id='image3')
+image4 = html.Img(src='', id='image4')
+image5 = html.Img(src='', id='image5')
+image6 = html.Img(src='', id='image6')
+
 image_path5 = './assets/Shap.png'
 image_path6 = './assets/ShapAnalysis.png'
 
@@ -44,13 +45,14 @@ columnDropdown = dcc.Dropdown(options=[
 
 images = html.Div(
     [
-       image1,
         html.Img(
-            src=image_path2, alt='image'),
+            src='', alt='image'),
         html.Img(
-            src=image_path3, alt='image'),
+            src='', alt='image'),
         html.Img(
-            src=image_path4, alt='image'),
+            src='', alt='image'),
+        html.Img(
+            src='', alt='image'),
     ], id="image-1"
 )
 
@@ -60,7 +62,7 @@ images2 = html.Div(
             src=image_path5, alt='image'),
         html.Img(
             src=image_path6, alt='image'),
-    ] , id="image-2"
+    ], id="image-2"
 )
 
 app.layout = dbc.Container(
@@ -88,6 +90,34 @@ app.layout = dbc.Container(
 )
 
 
+@app.callback(
+    Output("image1", "src"),
+    Output("image2", "src"),
+    Output("image3", "src"),
+    Output("image4", "src"),
+    Input("tabs", "active_tab"),
+)
+def renderImage(active_tab):
+    if active_tab == "q4":
+        image_path1 = './assets/figure1.png'
+        image_path2 = './assets/figure2.png'
+        image_path3 = './assets/figure3.png'
+        image_path4 = './assets/figure4.png'
+        return image_path1, image_path2, image_path3, image_path4
+
+
+@app.callback(
+    Output("image5", "src"),
+    Output("image6", "src"),
+    Input("tabs", "active_tab"),
+)
+def renderImage(active_tab):
+    if active_tab == "q6":
+        image_path5 = './assets/Shap.png'
+        image_path6 = './assets/ShapAnalysis.png'
+        return image_path5, image_path6
+
+
 @ app.callback(
     Output("tab-content", "children"),
     [Input("tabs", "active_tab"), Input("store", "data")],
@@ -97,9 +127,9 @@ def render_tab_content(active_tab, data):
         if active_tab == "q1":
             return [dropdown, columnDropdown, myGraph]
         elif active_tab == "q4":
-            return [images]
+            return [image1, image2, image3, image4]
         elif active_tab == "q6":
-            return [images2]
+            return [image5, image6]
 
     return "No tab selected"
 
