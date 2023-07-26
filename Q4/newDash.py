@@ -51,7 +51,7 @@ images = html.Div(
             src=image_path3, alt='image'),
         html.Img(
             src=image_path4, alt='image'),
-    ]
+    ], id="image-1"
 )
 
 images2 = html.Div(
@@ -60,7 +60,7 @@ images2 = html.Div(
             src=image_path5, alt='image'),
         html.Img(
             src=image_path6, alt='image'),
-    ]
+    ] , id="image-2"
 )
 
 app.layout = dbc.Container(
@@ -90,14 +90,14 @@ app.layout = dbc.Container(
 
 @ app.callback(
     Output("tab-content", "children"),
-    [Input("tabs", "active_tab"), Input("store", "data")],
+    [Input("tabs", "active_tab"), Input("store", "data"), Input("image1", "image-1")],
 )
-def render_tab_content(active_tab, data):
+def render_tab_content(active_tab, data, image1):
     if active_tab and data is not None:
         if active_tab == "q1":
             return [dropdown, columnDropdown, myGraph]
         elif active_tab == "q4":
-            return [images]
+            return [image1]
         elif active_tab == "q6":
             return [images2]
 
