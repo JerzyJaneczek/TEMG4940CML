@@ -11,10 +11,12 @@ import plotly.express as px
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 server = app.server
 
-image_path1 = 'figure1.png'
-image_path2 = 'figure2.png'
-image_path3 = 'figure3.png'
-image_path4 = 'figure4.png'
+image_path1 = './assets/figure1.png'
+image_path2 = './assets/figure2.png'
+image_path3 = './assets/figure3.png'
+image_path4 = './assets/figure4.png'
+image_path5 = './assets/Shap.png'
+image_path6 = './assets/ShapAnalysis.png'
 
 
 data = pd.read_csv("dataset.csv", sep="\t")
@@ -41,22 +43,22 @@ columnDropdown = dcc.Dropdown(options=[
 images = html.Div(
     [
         html.Img(
-            src='/assets/figure1.png', alt='image'),
+            src=image_path1, alt='image'),
         html.Img(
-            src='/assets/figure2.png', alt='image'),
+            src=image_path2, alt='image'),
         html.Img(
-            src='/assets/figure3.png', alt='image'),
+            src=image_path3, alt='image'),
         html.Img(
-            src='/assets/figure4.png', alt='image'),
+            src=image_path4, alt='image'),
     ]
 )
 
 images2 = html.Div(
     [
         html.Img(
-            src='/assets/Shap.png', alt='image'),
+            src=image_path5, alt='image'),
         html.Img(
-            src='/assets/ShapAnalysis.png', alt='image'),
+            src=image_path6, alt='image'),
     ]
 )
 
