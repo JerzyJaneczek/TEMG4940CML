@@ -97,9 +97,9 @@ def render_tab_content(active_tab, data):
         if active_tab == "q1":
             return [dropdown, columnDropdown, myGraph]
         elif active_tab == "q4":
-            return images
+            return [images]
         elif active_tab == "q6":
-            return images2
+            return [images2]
 
     return "No tab selected"
 
