@@ -41,7 +41,7 @@ columnDropdown = dcc.Dropdown(options=[
 images = html.Div(
     [
         html.Img(
-            src='/assets/figure1.png', alt='image'),
+            src='figure1.png', alt='image'),
         html.Img(
             src='assets/figure2.png', alt='image'),
         html.Img(
