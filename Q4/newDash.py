@@ -43,9 +43,9 @@ images = html.Div(
         html.Img(
             src='/assets/figure1.png', alt='image'),
         html.Img(
-            src='/assets/figure2.png', alt='image'),
+            src='assets/figure2.png', alt='image'),
         html.Img(
-            src='/assets/figure3.png', alt='image'),
+            src='./assets/figure3.png', alt='image'),
         html.Img(
             src='/assets/figure4.png', alt='image'),
     ]
